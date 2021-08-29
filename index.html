@@ -1,27 +1,30 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <title>Titre de la page</title>
 </head>
+
 <body>
-<div id="test">ICI TEST</div>
+
+<div id="root">ICI TEST</div>
+
 <div>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+            referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
     <script type="text/babel">
-        function MyComponent(){
-            return <div>Replace element by function</div>
+        function Header() {
+            return <h1>La maison jungle</h1>
         }
-        ReactDOM.render(
-            <MyComponent />,
-            document.getElementById('test')
-        );
+
+        ReactDOM.render(<Header/>, document.getElementById("root"))
     </script>
 </div>
-
 
 </body>
 </html>
