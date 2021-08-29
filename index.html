@@ -8,7 +8,8 @@
 
 <body>
 
-<div id="root">ICI TEST</div>
+<div id="root">ICI ROOT</div>
+<div id="panier">ICI PANIER</div>
 
 <div>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
@@ -19,7 +20,8 @@
 
     <script type="text/babel">
         function Header() {
-            return <h1>La maison jungle</h1>
+            const title = "la maison jungle"
+            return <h1>{ title.toUpperCase() }</h1>
         }
 
         function Description() {
@@ -35,18 +37,57 @@
             </div>)
         }
 
-        function Generic() {
-            return (<Parent>
-                <Enfant />
-                <Enfant />
-                <Enfant />
-            </Parent>)
+        function Cart(title, price) {
+            return (<li>{ title + price }</li>)
         }
 
-        ReactDOM.render(<div><Header /><Description /></div>, document.getElementById("root"))
-
+        //ReactDOM.render(<div><Header /><Description /></div>, document.getElementById("root"))
         // Same, with wrapper (do not display div block)
-        ReactDOM.render(<React.Fragment><Header /><Description /></React.Fragment>, document.getElementById("root"))
+        ReactDOM.render(<Banner />, document.getElementById("root"))
+
+        var tabCart = [
+            ["monstera", 8],
+            ["lierre ", 10],
+            ["bouquet de fleurs", 15]
+        ]
+
+        for (const [key, value] of Object.entries(tabCart)) {
+            console.log(key, value);
+
+            ReactDOM.render(<ul><Cart /></ul>, document.getElementById("root"))
+        }
+
+
+
+
+
+
+
+
+
+        function Banner2() {
+            const title = "La maison jungle"
+            return (<h1>{title}</h1>)
+        }
+
+        function Cart2() {
+            const monsteraPrice = 8
+            const ivyPrice = 10
+            const flowerPrice = 15
+            return (<div>
+                <h2>Panier</h2>
+                <ul>
+                    <li>Monstera : {monsteraPrice}€</li>
+                    <li>Lierre : {ivyPrice}€</li>
+                    <li>Fleurs : {flowerPrice}€</li>
+                </ul>
+                Total : {monsteraPrice + ivyPrice + flowerPrice }€
+            </div>)
+        }
+
+        ReactDOM.render(<div><Banner2 /><Cart2 /></div>, document.getElementById('root'))
+
+
 
 
     </script>
