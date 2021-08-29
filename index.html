@@ -22,7 +22,33 @@
             return <h1>La maison jungle</h1>
         }
 
-        ReactDOM.render(<Header/>, document.getElementById("root"))
+        function Description() {
+            const text = "Ici achetez toutes les plantes dont vous avez toujours rêvées"
+            const emojis = "🤑🤑🤑"
+            return (<p>{ text.slice(0, 11) + emojis }</p>)
+        }
+
+        function Banner() {
+            return (<div>
+                <Header />
+                <Description />
+            </div>)
+        }
+
+        function Generic() {
+            return (<Parent>
+                <Enfant />
+                <Enfant />
+                <Enfant />
+            </Parent>)
+        }
+
+        ReactDOM.render(<div><Header /><Description /></div>, document.getElementById("root"))
+
+        // Same, with wrapper (do not display div block)
+        ReactDOM.render(<React.Fragment><Header /><Description /></React.Fragment>, document.getElementById("root"))
+
+
     </script>
 </div>
 
