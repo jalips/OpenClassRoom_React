@@ -1,6 +1,5 @@
 import { plantList } from '../datas/plantList'
 
-
 /**
  *
  * @param accumulator Array return at the end
@@ -20,11 +19,13 @@ function reduceCategory(accumulator, currentValue){
 
 function ShoppingList() {
 
-    // v4
-    // reduce("parcours le tableau avec la fonction", "tableau vide en valeur de base")
-    const categoriesV4 = plantList.reduce(reduceCategory, [])
+    // V4: Same as v2 & v3 but with different syntax
+    const categoriesV4 = plantList.reduce(
+        reduceCategory, // "parcours le tableau avec la fonction"
+        [] // "tableau vide en valeur de base pour accumulator"
+    )
 
-    // V3 same as v2 but with different syntax
+    // V3: Same as v2 but with function out
     const categoriesV3 = plantList.reduce(
         function (acc, plant) {
             return reduceCategory(acc, plant)
@@ -32,17 +33,17 @@ function ShoppingList() {
         []
     )
 
-    // V2: With main function out
+    // V2: Same as v1 but with different syntax
     const categoriesV2 = plantList.reduce(
-        (acc, plant) =>
-            reduceCategory(acc, plant),
+        function (acc, plant) {
+            return acc.includes(plant.category) ? acc : acc.concat(plant.category)
+        },
         []
     )
 
     // V1: Openclassroom
     const categoriesV1 = plantList.reduce(
-        (acc, plant) =>
-            acc.includes(plant.category) ? acc : acc.concat(plant.category),
+        (acc, plant) => acc.includes(plant.category) ? acc : acc.concat(plant.category),
         []
     )
 
