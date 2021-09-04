@@ -1,6 +1,7 @@
 import Banner from './Banner'
 import Cart from "./Cart";
 import ShoppingList from "./ShoppingList";
+import QuestionForm from "./QuestionForm";
 
 function handleSubmit(e) {
   e.preventDefault()
@@ -14,6 +15,7 @@ function App() {
       <input type='text' name='my_input' defaultValue='Tapez votre texte' />
       <button type='submit'>Entrer</button>
     </form>
+    <QuestionForm />
   </div>
 }
 
