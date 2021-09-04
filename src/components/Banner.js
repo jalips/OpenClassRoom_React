@@ -1,5 +1,12 @@
+import '../styles/Banner.css'
+
 function Banner() {
-    return <h1>La maison jungle</h1>
+    return <div className='lmj-banner'>
+        <h1 style={{
+            color: 'green',
+            textAlign: 'left'
+        }}>La maison jungle</h1>
+    </div>
 }
 
 export default Banner
