@@ -17,6 +17,10 @@ function reduceCategory(accumulator, currentValue){
     }
 }
 
+function reduceCategoryWithTernary(accumulator, currentValue){
+    return accumulator.includes(currentValue.category) ? accumulator : accumulator.concat(currentValue.category)
+}
+
 function ShoppingList() {
 
     // V4: Same as v2 & v3 but with different syntax
@@ -28,7 +32,7 @@ function ShoppingList() {
     // V3: Same as v2 but with function out
     const categoriesV3 = plantList.reduce(
         function (acc, plant) {
-            return reduceCategory(acc, plant)
+            return reduceCategoryWithTernary(acc, plant)
         },
         []
     )
