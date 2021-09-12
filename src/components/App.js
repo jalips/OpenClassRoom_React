@@ -1,6 +1,6 @@
 import Banner from './Banner'
 import logo from '../assets/logo.png'
-// import Cart from './Cart'
+import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
 
@@ -12,7 +12,7 @@ function App() {
 				<h1 className='lmj-title'>La maison jungle</h1>
 			</Banner>
 
-			{/* <Cart /> */}
+			<Cart />
 			<ShoppingList />
 			<Footer />
 		</div>
