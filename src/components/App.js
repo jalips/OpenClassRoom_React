@@ -1,13 +1,13 @@
+import { useState } from 'react'
 import Banner from './Banner'
 import logo from '../assets/logo.png'
 import Cart from './Cart'
 import Footer from './Footer'
 import ShoppingList from './ShoppingList'
-import {useState} from "react";
+import '../styles/Layout.css'
 
 function App() {
-	const [cart, updateCart] = useState(0)
-
+	const [cart, updateCart] = useState([])
 	return (
 		<div>
 			<Banner>
